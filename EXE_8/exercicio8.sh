@@ -5,34 +5,46 @@
 # Maria Suelany Brito da Cruz - MAT.: 115211176
 
 
-verificaHost(){
-	#Indique se é um nome válido
-	RESULT=$(getent hosts $1)
-	if [ $(echo $?) -eq 0 ]; then
+# FUNÇAO QUE IMPRIME RELATORIO DE UM HOST
+relatorioHost(){
+	# Executa comando guandando o resultado e tempo da execuçao
+	(time getent hosts $1 > RESULT 2> /dev/null) 2> times.txt
 	
-		#Calcule o número de IPs nas quais cada nome resolve
-		IPS=$(getent hosts $1 | wc -l)
-		
-		#Indique se há um domínio “m”
+	# Extra: tempo real para fazer consultas
+	TIME_REAL=$( cat times.txt | sed -n "2"p | cut -d"m" -f2)
+	
+	# Numero de IPS que o nome resolve
+	IPS=$( cat RESULT | wc -l )
+	
+	# Nome válido
+	if [ $IPS -ne 0 ]; then
+	
+		#Indique se há um domínio "m"
 		DOMINIOS_M=$(getent hosts "m.$1")
-		if [ $(echo $?) -eq 0 ]; then
-			echo "$1 $IPS MOBILE"
-		else
-			echo "$1 $IPS"
-		fi
 		
+		# Existe dominios "m"
+		if [ $(echo $?) -eq 0 ]; then
+			echo "$1 $IPS MOBILE Tempo: $TIME_REAL"
+			
+		# Nao existe dominios "m"
+		else
+			echo "$1 $IPS Tempo: $TIME_REAL"
+		fi
+	
+	# Nome invalido	
 	else
-		echo "$1 ERRO"
+		echo "$1 ERRO Tempo: $TIME_REAL"
 	fi
 }
 
-
+# VERIFICA ENTRADA E CHAMA FUNÇAO QUE IMPRIME RELATORIO PARA CADA HOST
 if [ $# -eq 2 ] && [ $1 == "-f" ]; then
 	# Verifica para cada linha do arquivo
 	while read LINE; do
-		 verificaHost "$LINE"	
+		 relatorioHost "$LINE"	
 	done < $2
 	
 elif [ $# -eq 1 ]; then 
-	verificaHost "$1"
+	relatorioHost "$1"
 fi
+
