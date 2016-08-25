@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Server: Apache/2.2.15 (Red Hat)
+X-Powered-By: PHP/5.6.10 ZendServer/8.5.0
+X-UA-Compatible: IE=edge,chrome=1
+P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+Last-Modified: Fri, 19 Aug 2016 20:47:53 GMT
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Cache-Control: max-age=300
+Expires: Fri, 19 Aug 2016 20:52:59 GMT
+Date: Fri, 19 Aug 2016 20:47:59 GMT
+Age: 36
+X-Cache: HIT from Proxy
+X-Cache-Lookup: HIT from Proxy:0
+Via: 1.1 Proxy (squid/3.4.8)
+Connection: keep-alive
+

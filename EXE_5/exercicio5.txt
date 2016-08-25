@@ -1,0 +1,17 @@
+UFCG
+Administraçao de Sistemas - Prof. Matheus G. Rego
+Exercicio 5
+Aluna: Maria Suelany Brito da Cruz, mat. 115211176
+
+Codigo de etica para alunos da UFCG
+
+- Respeitar professores, funcionarios e outros alunos
+- Ter pontualidade
+- Evitar danificar objetos da sala de aula
+- Ser integro e honesto em relacao a qualquer tipo de avaliaçao, seja trabalhos, provas e/ou projetos.
+- Respeitar os prazos de entrega de livros na biblioteca
+
+Codigo de etica para alunos de computaçao
+
+- Nao danificar computadores dos laboratorios
+- Nao usar os computadores para prejudicar alguem
