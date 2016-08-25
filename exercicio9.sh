@@ -13,9 +13,10 @@ ULTIMA_LINHA=$(cat TESTE.txt | wc -l)
 sed -n "$ULTIMA_LINHA"p TESTE.txt 
 
 #A hora retornada pelo servidor (formato HH:MM:SS)
-cat Arquivo | grep "Date" | cut -d" " -f6
+DATE_SERVER=$(cat Arquivo | grep "Date" | cut -d" " -f6)
 
 #A hora atual da máquina (formato HH:MM:SS)
-date +%T
+DATE_CLIENTE=$(date +%T)
 
 #A diferença de tempo entre a hora da máquina e a hora do servidor em segundos
+echo $(( $(date -d"$DATE_SERVER" +%S) - $(date -d"$DATE_CLIENTE") ))
