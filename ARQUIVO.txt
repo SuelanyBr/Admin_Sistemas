@@ -1,0 +1,13 @@
+HTTP/1.1 301 Moved Permanently
+Location: https://www.facebook.com/
+Vary: Accept-Encoding
+Content-Type: text/html
+X-FB-Debug: FxivfZpeM9GyGjtvwwk8nrDUy31lv0ehpBFdfmUwCHEnRtLlw0qltsnaW4wTKt6C5H0XOOPnTLE5LggfDPiebA==
+Date: Mon, 29 Aug 2016 16:19:32 GMT
+Content-Length: 0
+X-Cache: MISS from Proxy
+X-Cache-Lookup: MISS from Proxy:0
+Via: 1.1 Proxy (squid/3.4.8)
+Connection: keep-alive
+
+0,648
