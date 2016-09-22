@@ -6,27 +6,22 @@
 
 existDirectory(){
 	DIR=$1
-	QTDE=0
-	
-	if [ -d $DIR ]; then
-		echo $QTDE;
-	else
-		for doc in $(ls); do
-			QTDE=$(( $QTDE + 1 ))
-			if [ "$doc" = "$DIR.$QTDE" ]; then
-				echo $QTDE
-			fi
-		done	
-	fi
-	
+	QTDE=$( ls | grep $DIR | wc -l)
+	echo $QTDE
 }
 
 if [ $# -eq 2 ]; then
 	ORIGEM=$1
 	DESTINO=$2
 	
-	existDirectory "$ORIGEM"
+	if [ -d "$ORIGEM" ]; then
+		QTDE=$(existDirectory "$ORIGEM")
+	fi
 	
+	NEW_DIR="$ORIGEM.$QTDE"
+	mkdir $NEW_DIR
+	
+	cp -r $ORIGEM $NEW_DIR
 	
 elif [ $# -eq 3 ]; then
 	ORIGEM=$2
